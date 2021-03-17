@@ -5,11 +5,8 @@
         <th scope="col">Id</th>
         <th scope="col">Brand-Model</th>
         <th scope="col">Body</th>
-        <th scope="col">Color</th>
         <th scope="col">Fuel</th>
-        <th scope="col">Year</th>
-        <th scope="col">Price</th>
-        <th scope="col">Photo</th>
+        <th scope="col">Price per day</th>
 
       </tr>
     </thead>
@@ -18,11 +15,8 @@
         <th scope="row">{{carDto.id}}</th>
         <td>{{carDto.brandName}} {{carDto.modelName}}</td>
         <td>{{carDto.bodyType}}</td>
-        <td>{{carDto.colorName}} <span *ngIf="carDto.metalic">metalic</span></td>
         <td>{{carDto.fuelType}}</td>
-        <td>{{carDto.modelYear}}</td>
-        <td>{{carDto.dailyPrice}} ₺/day</td>
-        <td><img [src] = "carDto.photo" alt="car image"></td>
+        <td>{{carDto.dailyPrice}} ₺</td>
 
       </tr>
     </tbody>

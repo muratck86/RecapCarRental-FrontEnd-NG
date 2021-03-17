@@ -1,1 +1,29 @@
-<p>rent-dto works!</p>
+<table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Id</th>
+        <th scope="col">Car</th>
+        <th scope="col">Driver</th>
+        <th scope="col">Company</th>
+        <th scope="col">Rent Date</th>
+        <th scope="col">Estimated Return Date</th>
+        <th scope="col">Actual Return Date</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rent of rents">
+        <th scope="row">{{rent.id}}</th>
+        <td>{{rent.carDetails}} </td>
+        <td>{{rent.userName}}</td>
+        <td>{{rent.companyName}}</td>
+        <td>{{rent.rentDate}}</td>
+        <td>{{rent.estReturnDate}}</td>
+        <td>{{rent.actReturnDate}}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
