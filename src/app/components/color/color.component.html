@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">RGB value</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let color of colors">
+        <th scope="row">{{color.id}}</th>
+        <td>{{color.name}} <span *ngIf="color.metalic">metalic</span></td>
+        <td>{{color.rgbValue}}</td>
+
+      </tr>
+    </tbody>
+  </table>
