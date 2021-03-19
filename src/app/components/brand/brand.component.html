@@ -1,19 +1,7 @@
-<table class="table">
-    <thead>
-      <tr>
-
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Model</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let brand of brands">
-        <th scope="row">{{brand.id}}</th>
-        <td>{{brand.name}} </td>
-        <td>{{brand.model}}</td>
-
-      </tr>
-    </tbody>
-  </table>
+<div class="list-group shadow">
+    <button type="button" (click)="setCurrentBrand(allBrands)" [class]="getCurrentBrandClass(allBrands)" routerLink=""><strong>All Brands</strong></button>
+    <button type="button" *ngFor="let brandName of brandNames" (click)="setCurrentBrand(brandName)" routerLink="/cars/brand/{{brandName}}"
+        [class]="getCurrentBrandClass(brandName)">
+        {{brandName}}
+</button>
+</div>

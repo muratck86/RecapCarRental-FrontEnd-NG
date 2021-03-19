@@ -1,23 +1,94 @@
-<table class="table">
-    <thead>
-      <tr>
+<table class="table table-hover">
+  <thead>
+    <tr>
 
-        <th scope="col">Id</th>
-        <th scope="col">Brand-Model</th>
-        <th scope="col">Body</th>
-        <th scope="col">Fuel</th>
-        <th scope="col">Price per day</th>
+      <th scope="col">Id</th>
+      <th scope="col">Brand-Model</th>
+      <th scope="col">Body</th>
+      <th scope="col">Fuel</th>
+      <th scope="col">Price per day</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let carDto of carDtoList">
-        <th scope="row">{{carDto.id}}</th>
-        <td>{{carDto.brandName}} {{carDto.modelName}}</td>
-        <td>{{carDto.bodyType}}</td>
-        <td>{{carDto.fuelType}}</td>
-        <td>{{carDto.dailyPrice}} ₺</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let carDto of carDtoList" data-bs-toggle="modal" data-bs-target="#carDetailsModal"
+      (click)="selectCar(carDto)">
+      <th scope="row">{{carDto.id}}</th>
+      <td>{{carDto.brandName}} {{carDto.modelName}}</td>
+      <td>{{carDto.bodyType}}</td>
+      <td>{{carDto.fuelType}}</td>
+      <td>{{carDto.dailyPrice}} ₺</td>
+    </tr>
+  </tbody>
+</table>
 
-      </tr>
-    </tbody>
-  </table>
+<!-- Modal -->
+<div class="modal fade" id="carDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{currentCar.brandName}} {{currentCar.modelName}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <img [src]="carPhotos[0]?.imagePath" [alt]="currentCar.plate">
+            </div>
+            <div class="col-md-4">
+              <table class="table-warning">
+                <tbody>
+                  <tr>
+                    <th scope="row">Body</th>
+                    <td>{{currentCar.bodyType}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fuel</th>
+                    <td>{{currentCar.fuelType}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Geartype</th>
+                    <td>{{currentCar.gearType}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Powered Wheels</th>
+                    <td>{{currentCar.wheelDrive}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Model Year</th>
+                    <td>{{currentCar.modelYear}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Body</th>
+                    <td>{{currentCar.colorName}} <span *ngIf="currentCar.metalic"> Metalic</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Plate</th>
+                    <td>{{currentCar.plate}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Daily Price</th>
+                    <td>{{currentCar.dailyPrice}} ₺</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <h5>Description</h5>
+            <p>{{currentCar.descript}}</p>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Rent</button>
+      </div>
+    </div>
+  </div>
+</div>

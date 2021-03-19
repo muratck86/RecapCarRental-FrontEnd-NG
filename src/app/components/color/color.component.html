@@ -1,19 +1,7 @@
-<table class="table">
-    <thead>
-      <tr>
-
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">RGB value</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let color of colors">
-        <th scope="row">{{color.id}}</th>
-        <td>{{color.name}} <span *ngIf="color.metalic">metalic</span></td>
-        <td>{{color.rgbValue}}</td>
-
-      </tr>
-    </tbody>
-  </table>
+  <div class="list-group shadow pt-2">
+    <button type="button" (click)="setCurrentColor(allColors)" [class]="getCurrentColorClass(allColors)" routerLink=""><strong>All Colors</strong></button>
+    <button type="button" *ngFor="let colorName of colorNames" (click)="setCurrentColor(colorName)" routerLink="cars/color/{{colorName}}"
+        [class]="getCurrentColorClass(colorName)">
+        {{colorName}}
+</button>
+</div>

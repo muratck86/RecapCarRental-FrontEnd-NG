@@ -1,8 +1,12 @@
-
-<app-navi></app-navi>
-<app-car-dto></app-car-dto>
-<app-color></app-color>
-<app-brand></app-brand>
-<app-customer></app-customer>
-<app-rent-dto></app-rent-dto>
-<router-outlet></router-outlet>
+<div class="container">
+    <app-navi></app-navi>
+    <div class="row">
+        <div class="col-md-3 pt-3">
+            <app-brand></app-brand>
+            <app-color></app-color>
+        </div>
+        <div class="col-md-9 pt-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

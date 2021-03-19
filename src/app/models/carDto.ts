@@ -1,13 +1,16 @@
 export interface CarDto {
      id:number
      colorName: string
-     metalic: string
+     metalic: boolean
      brandName:string
      modelName:string
      bodyType:string
      fuelType:string
      modelYear:number
      dailyPrice:number
-     photo:File
+     gearType:string
+     wheelDrive:string
+     plate:string
+     descript:string
 
 }

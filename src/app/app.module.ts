@@ -11,6 +11,7 @@ import { CarDtoComponent } from './components/car-dto/car-dto.component';
 import { RentDtoComponent } from './components/rent-dto/rent-dto.component';
 import { CarDtoService } from './services/carDto.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CarImageService } from './services/carImage.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CarDtoService],
+  providers: [CarDtoService, CarImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

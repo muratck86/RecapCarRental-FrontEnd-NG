@@ -1,0 +1,11 @@
+tr {
+    cursor: pointer;
+}
+
+tr:active {
+    background-color: darkgrey;
+}
+
+img {
+    width: 25vw;
+}

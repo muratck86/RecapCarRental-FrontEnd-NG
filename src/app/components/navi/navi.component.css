@@ -1,0 +1,26 @@
+.logo {
+}
+#logo1 {
+  float: left;
+  padding: 2px 5px 0 8px;
+  margin-top: -10px;
+  background-color: coral;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 2px;
+}
+
+#logo2 {
+  display: inline-block;
+  padding: 2px 8px 0 5px;
+  margin-top: -10px;
+  background-color: darkcyan;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 12px;
+}
+
+#logo3 {
+  padding-left: 10px;
+  margin-top: -10px;
+  font-size: 0.5em;
+  color: cadetblue;
+}
