@@ -1,4 +1,6 @@
-<table class="table table-hover">
+<div *ngIf="searchText.length > 1">
+  Showing cars for "{{searchText}}"
+</div><table class="table table-hover">
   <thead>
     <tr>
 
@@ -11,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let carDto of carDtoList" data-bs-toggle="modal" data-bs-target="#carDetailsModal"
+    <tr *ngFor="let carDto of carDtoList | searchcar:searchText" data-bs-toggle="modal" data-bs-target="#carDetailsModal"
       (click)="selectCar(carDto)">
       <th scope="row">{{carDto.id}}</th>
       <td>{{carDto.brandName}} {{carDto.modelName}}</td>

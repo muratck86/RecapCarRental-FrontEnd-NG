@@ -12,6 +12,9 @@ import { RentDtoComponent } from './components/rent-dto/rent-dto.component';
 import { CarDtoService } from './services/carDto.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CarImageService } from './services/carImage.service';
+import { FormsModule } from '@angular/forms';
+import { SearchService } from './services/search.service';
+import { SearchcarPipe } from './pipes/searchcar.pipe';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,16 @@ import { CarImageService } from './services/carImage.service';
     ColorComponent,
     CustomerComponent,
     CarDtoComponent,
-    RentDtoComponent
+    RentDtoComponent,
+    SearchcarPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [CarDtoService, CarImageService],
+  providers: [CarDtoService, CarImageService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { CarDto } from 'src/app/models/carDto';
 import { CarImage } from 'src/app/models/carImage';
 import { CarDtoService } from 'src/app/services/carDto.service';
 import { CarImageService } from 'src/app/services/carImage.service';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-car-dto',
@@ -35,7 +36,8 @@ export class CarDtoComponent implements OnInit {
 
   constructor(private carDtoService:CarDtoService,
     private activatedRoute:ActivatedRoute,
-    private carImageService:CarImageService) { }
+    private carImageService:CarImageService,
+    private searchService:SearchService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(route => {
@@ -47,13 +49,12 @@ export class CarDtoComponent implements OnInit {
         this.getCarDetailsList()
       }
     })
-    
   }
 
   getCarDetailsList(){
     this.carDtoService.getCarDtoList().subscribe(result => {
       this.carDtoList = result.data
-      console.log(this.carDtoList)
+      //console.log(this.carDtoList)
     })
   }
 
@@ -81,6 +82,10 @@ export class CarDtoComponent implements OnInit {
   selectCar(car:CarDto) {
     this.currentCar = car
     this.getCarPhotos(car.id)
+  }
+
+  public get searchText() : string {
+    return this.searchService.searchText
   }
 
 }

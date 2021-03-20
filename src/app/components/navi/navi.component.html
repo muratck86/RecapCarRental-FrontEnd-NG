@@ -37,8 +37,7 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-info btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="text" placeholder="Start typing to search" aria-label="Search" [(ngModel)]="searchText" name="search">
       </form>
     </div>
   </div>
